@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CERITIFICATES</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+     <link rel="shortcut icon" href="./logo.jpg">
+</head>
+<body>
+    <div class="certification">
+        <div class="logo">
+            <img src="./logo.jpg" alt="">
+        </div>
+        <div class="details">
+            <h4>Modal No :- <span id="modal">1</span></h4>
+            <h4>Cost :- <span id="cost">1200</span></h4>
+        </div>
+        <div class="row">
+        <div class="col-md-3" id="row1"><img src="./images/Screenshot (1).png"></div>
+        <div class="col-md-3" id="row2"><img src="./images/Screenshot (4).png"></div>
+        <div class="col-md-3" id="row3"><img src="./images/Screenshot (4).png"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="front()" id="gt">&lt;</button>
+        <button onclick="back()" id="lt">&gt;</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var i=1;
+        function front()
+        {
+        let front=["Screenshot (1)","Screenshot (2)","Screenshot (3)"];
+        let back=["Screenshot (4)","Screenshot (4)","Screenshot (4)"];
+        let hand=["Screenshot (4)","Screenshot (4)","Screenshot (4)"];
+        let price=["1200","800","500"];
+        document.getElementById('row1').innerHTML="<img src='./images/"+front[i]+".png'/>";
+        document.getElementById('row2').innerHTML="<img src='./images/"+back[i]+".png'/>";    
+        document.getElementById('row3').innerHTML="<img src='./images/"+hand[i]+".png'/>";
+        document.getElementById('modal').innerHTML=i+1;
+        document.getElementById('cost').innerHTML=price[i];
+
+            if(i > front.length)
+            {
+                i=-1;
+            }
+            i++;
+        }
+        function back()
+        {
+            if(i!=0)
+            {
+                i--;
+            }
+        let front=["Screenshot (1)","Screenshot (2)","Screenshot (3)"];
+        let back=["Screenshot (4)","Screenshot (4)","Screenshot (4)"];
+        let hand=["Screenshot (4)","Screenshot (4)","Screenshot (4)"];
+        document.getElementById('row1').innerHTML="<img src='./images/"+front[i]+".png'/>";
+        document.getElementById('row2').innerHTML="<img src='./images/"+back[i]+".png'/>";    
+        document.getElementById('row3').innerHTML="<img src='./images/"+hand[i]+".png'/>";
+            if(i== front.length)
+            {
+                i=0;
+            }
+        }
+    </script>
+</body>
+</html>
+
+   
